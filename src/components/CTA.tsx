@@ -10,8 +10,8 @@ export function CTA() {
           <div className="relative grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05]">
-                Keep every case{" "}
-                <span className="text-teal-400">moving.</span>
+                Keep Every Case{" "}
+                <span className="text-teal-400">Moving.</span>
               </h2>
               <p className="mt-5 text-lg text-white/70 max-w-md">
                 See QuickFlow™ tailored to your agency, from lead capture to

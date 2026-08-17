@@ -1,3 +1,16 @@
+import {
+  ArrowRight,
+  PlayCircle,
+  ShieldCheck,
+  SquaresFour,
+  ChartLine,
+  Circle,
+  Folder,
+  UsersThree,
+  ChartBar,
+  Timer,
+} from "@phosphor-icons/react/dist/ssr";
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
@@ -7,20 +20,8 @@ export function Hero() {
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-[420px] w-[420px] rounded-full bg-brandblue-500/15 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
-        {/* Eyebrow */}
-        <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-600/20 dark:border-teal-400/20 bg-white/70 dark:bg-white/5 px-4 py-1.5 text-xs font-semibold text-teal-700 dark:text-teal-400 shadow-sm backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal-600 dark:bg-teal-400 animate-pulse" />
-            The Consulting Operations OS
-            <span className="text-ink-400">·</span>
-            <span className="text-ink-500 dark:text-ink-400 font-medium">
-              Built for Immigration & Visa Agencies
-            </span>
-          </div>
-        </div>
-
         {/* Headline */}
-        <h1 className="mt-8 text-center text-4xl sm:text-5xl lg:text-[64px] font-extrabold tracking-tight leading-[1.05] text-ink-950 dark:text-white">
+        <h1 className="text-center text-4xl sm:text-5xl lg:text-[64px] font-extrabold tracking-tight leading-[1.05] text-ink-950 dark:text-white">
           Run Your Entire
           <br className="hidden sm:block" />{" "}
           <span className="relative inline-block">
@@ -46,19 +47,14 @@ export function Hero() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-brandblue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brandblue-600/25 hover:bg-brandblue-700 transition-all hover:-translate-y-0.5"
           >
             Book a Live Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
+            <ArrowRight size={16} weight="bold" />
           </a>
           <a
             href="#flow"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-white/5 px-6 py-3.5 text-sm font-semibold text-ink-900 dark:text-white border border-ink-900/10 dark:border-white/10 shadow-sm hover:border-teal-600/40 dark:hover:border-teal-400/40 hover:text-teal-700 dark:hover:text-teal-400 transition-all"
           >
             See How QuickFlow™ Works
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
-            </svg>
+            <PlayCircle size={16} weight="bold" />
           </a>
         </div>
 
@@ -89,10 +85,7 @@ function ProductMock() {
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
           <div className="ml-4 flex items-center gap-2 text-[11px] text-ink-400 font-medium">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="3" y="11" width="18" height="11" rx="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
+            <ShieldCheck size={12} weight="bold" />
             quickflow.icodedigita.com
           </div>
         </div>
@@ -102,12 +95,12 @@ function ProductMock() {
           {/* Sidebar */}
           <div className="hidden md:flex col-span-2 flex-col gap-1 p-4 border-r border-ink-900/5 dark:border-white/10 bg-canvas/40">
             {[
-              { i: "◈", l: "Dashboard", a: false },
-              { i: "◉", l: "Pipeline", a: true },
-              { i: "◐", l: "Cases", a: false },
-              { i: "◇", l: "Finance", a: false },
-              { i: "◎", l: "People", a: false },
-              { i: "◆", l: "Reports", a: false },
+              { icon: SquaresFour, l: "Dashboard", a: false },
+              { icon: ChartLine, l: "Pipeline", a: true },
+              { icon: Folder, l: "Cases", a: false },
+              { icon: ChartBar, l: "Finance", a: false },
+              { icon: UsersThree, l: "People", a: false },
+              { icon: Circle, l: "Reports", a: false },
             ].map((item) => (
               <div
                 key={item.l}
@@ -117,7 +110,7 @@ function ProductMock() {
                     : "text-ink-500 dark:text-ink-400 hover:bg-white dark:hover:bg-white/5"
                 }`}
               >
-                <span>{item.i}</span>
+                <item.icon size={14} weight="bold" />
                 {item.l}
               </div>
             ))}
@@ -162,8 +155,9 @@ function ProductMock() {
                     <MiniCard name="A. Khan" tag="UK Visitor" />
                     <MiniCard name="M. Ali" tag="CA Study" />
                     {s.label === "Handover" && (
-                      <div className="rounded-lg border border-amber-200 dark:border-amber-500/20 bg-amber-50 dark:bg-amber-500/10 p-2 text-[10px] font-semibold text-amber-800 dark:text-amber-400">
-                        ⏱ SLA 4h
+                      <div className="flex items-center gap-1 rounded-lg border border-amber-200 dark:border-amber-500/20 bg-amber-50 dark:bg-amber-500/10 p-2 text-[10px] font-semibold text-amber-800 dark:text-amber-400">
+                        <Timer size={11} weight="bold" />
+                        SLA 4h
                       </div>
                     )}
                   </div>

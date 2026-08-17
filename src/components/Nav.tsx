@@ -1,5 +1,6 @@
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export function Nav() {
   return (
@@ -36,9 +37,7 @@ export function Nav() {
             className="inline-flex items-center gap-2 rounded-lg bg-brandblue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brandblue-700 transition-colors"
           >
             Book a Demo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
+            <ArrowRight size={14} weight="bold" />
           </a>
         </div>
       </div>

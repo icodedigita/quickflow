@@ -1,4 +1,12 @@
 import { Logo } from "./Logo";
+import { XLogo, LinkedinLogo, YoutubeLogo, GithubLogo } from "@phosphor-icons/react/dist/ssr";
+
+const socials = [
+  { icon: XLogo, label: "X" },
+  { icon: LinkedinLogo, label: "LinkedIn" },
+  { icon: YoutubeLogo, label: "YouTube" },
+  { icon: GithubLogo, label: "GitHub" },
+];
 
 export function Footer() {
   return (
@@ -12,13 +20,14 @@ export function Footer() {
               Every Case Forward.
             </p>
             <div className="mt-5 flex items-center gap-2">
-              {["𝕏", "in", "yt", "gh"].map((i) => (
+              {socials.map(({ icon: Icon, label }) => (
                 <a
-                  key={i}
+                  key={label}
                   href="#"
-                  className="h-8 w-8 flex items-center justify-center rounded-lg border border-ink-900/10 dark:border-white/10 text-ink-500 dark:text-ink-400 text-xs font-bold hover:border-teal-600/40 dark:hover:border-teal-400/40 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
+                  aria-label={label}
+                  className="h-8 w-8 flex items-center justify-center rounded-lg border border-ink-900/10 dark:border-white/10 text-ink-500 dark:text-ink-400 hover:border-teal-600/40 dark:hover:border-teal-400/40 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
                 >
-                  {i}
+                  <Icon size={16} weight="bold" />
                 </a>
               ))}
             </div>

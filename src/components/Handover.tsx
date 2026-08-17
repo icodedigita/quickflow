@@ -1,3 +1,5 @@
+import { Check, ArrowDown } from "@phosphor-icons/react/dist/ssr";
+
 export function Handover() {
   return (
     <section id="handover" className="relative py-24 lg:py-32 bg-ink-950 text-white overflow-hidden">
@@ -49,9 +51,7 @@ export function Handover() {
               ].map((t) => (
                 <li key={t} className="flex items-start gap-3">
                   <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-teal-500/20 text-teal-400">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
+                    <Check size={12} weight="bold" />
                   </span>
                   <span className="text-white/85 text-sm">{t}</span>
                 </li>
@@ -143,9 +143,7 @@ function HandoverChain() {
           </div>
           {i < chainSteps.length - 1 && (
             <div className="flex justify-center py-1">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-teal-400/60 flow-arrow" style={{ animationDelay: `${i * 0.3}s` }}>
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-              </svg>
+              <ArrowDown size={14} weight="bold" className="text-teal-400/60 flow-arrow" style={{ animationDelay: `${i * 0.3}s` }} />
             </div>
           )}
         </div>

@@ -1,3 +1,5 @@
+import { ArrowRight, Lightning, Eye, SealCheck } from "@phosphor-icons/react/dist/ssr";
+
 const stages = [
   { label: "Lead", desc: "Capture" },
   { label: "Sales", desc: "Qualify & close" },
@@ -52,20 +54,12 @@ export function Flow() {
                 </div>
                 {i < stages.length - 1 && (
                   <div className="flex items-center justify-center px-1 lg:px-1.5">
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    <ArrowRight
+                      size={18}
+                      weight="bold"
                       className="text-teal-600 flow-arrow"
                       style={{ animationDelay: `${i * 0.25}s` }}
-                    >
-                      <path d="M5 12h14M13 5l7 7-7 7" />
-                    </svg>
+                    />
                   </div>
                 )}
               </div>
@@ -77,33 +71,19 @@ export function Flow() {
             <Pillar
               title="Quick"
               desc="Automations and SLAs move work forward without manual chasing."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                </svg>
-              }
+              icon={<Lightning weight="bold" />}
               accent="text-brandblue-600 bg-brandblue-50 dark:bg-brandblue-500/10"
             />
             <Pillar
               title="Visible"
               desc="One pipeline. Every case, deadline and owner in real-time."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
-              }
+              icon={<Eye weight="bold" />}
               accent="text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-500/10"
             />
             <Pillar
               title="Accountable"
               desc="Every handover has an owner, a deadline and an audit trail."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="m9 12 2 2 4-4"/>
-                </svg>
-              }
+              icon={<SealCheck weight="bold" />}
               accent="text-violet-700 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10"
             />
           </div>
